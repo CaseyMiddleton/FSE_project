@@ -1,1 +1,0 @@
-ReadMe for Foundations of Software Engineering Project Ð Spring 2022Members: Nick LaBerge, Casey Middleton, Katie Spoon, and Ponder Spine
