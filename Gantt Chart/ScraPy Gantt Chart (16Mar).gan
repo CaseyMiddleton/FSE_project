@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="ScraPy Gantt Chart" company="CSCI 5828" webLink="http://" view-date="2022-02-22" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.11" locale="en_US">
+    <description/>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Name" width="167" order="0"/>
+        <field id="tpd4" name="Begin date" width="65" order="1"/>
+        <field id="tpd5" name="End date" width="64" order="2"/>
+        <option id="taskLabelLeft" value="name"/>
+        <option id="color.recent">
+            <![CDATA[#ff0000 #ff00ff #ffff00 #00cc00 #ff9900 #ffcc33 #66ccff #00ffff #0000ff]]>
+        </option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="210" order="0"/>
+        <field id="1" name="Default role" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="true"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Form Team" color="#ff9900" meeting="false" start="2022-03-03" duration="8" complete="0" thirdDate="2022-03-16" thirdDate-constraint="0" expand="true">
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" name="Brainstorm and Pick project Idea" color="#ff9900" meeting="false" start="2022-03-11" duration="3" complete="0" thirdDate="2022-02-27" thirdDate-constraint="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="5" name="HW5 Work" color="#00cc00" meeting="false" start="2022-03-14" duration="3" complete="0" thirdDate="2022-02-27" thirdDate-constraint="0" expand="true">
+            <depend id="12" type="2" difference="0" hardness="Strong"/>
+            <task id="22" name="Create Trello Project Tracker" color="#00cc00" meeting="false" start="2022-03-14" duration="1" complete="0" thirdDate="2022-03-14" thirdDate-constraint="0" expand="true">
+                <depend id="17" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="17" name="Come up with User Stories" color="#00cc00" meeting="false" start="2022-03-15" duration="2" complete="0" thirdDate="2022-03-14" thirdDate-constraint="0" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="26" name="Create a Git repo" color="#00cc00" meeting="false" start="2022-03-14" duration="1" complete="0" thirdDate="2022-03-14" thirdDate-constraint="0" expand="true">
+                <depend id="28" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="28" name="Develop simple HW5 app" color="#00cc00" meeting="false" start="2022-03-15" duration="1" complete="0" thirdDate="2022-03-14" thirdDate-constraint="0" expand="true">
+                <depend id="32" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="32" name="Deploy Simple app" color="#00cc00" meeting="false" start="2022-03-16" duration="1" complete="0" thirdDate="2022-03-14" thirdDate-constraint="0" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="12" name="HW 5 Due" color="#ff0000" meeting="true" start="2022-03-17" duration="0" complete="0" thirdDate="2022-02-27" thirdDate-constraint="0" expand="true">
+            <depend id="44" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="44" name="Application Development" color="#ffff00" meeting="false" start="2022-03-17" duration="14" complete="0" thirdDate="2022-02-27" thirdDate-constraint="0" expand="true">
+            <depend id="47" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="131" name="HW6 Due" color="#ff0000" meeting="true" start="2022-03-31" duration="0" complete="0" thirdDate="2022-03-20" thirdDate-constraint="0" expand="true"/>
+        <task id="47" name="Application Testing" color="#ffff00" meeting="false" start="2022-03-31" duration="8" complete="0" thirdDate="2022-03-09" thirdDate-constraint="0" expand="true">
+            <depend id="50" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="50" name="Deploy application" color="#ffff00" meeting="false" start="2022-04-08" duration="6" complete="0" thirdDate="2022-03-09" thirdDate-constraint="0" expand="true">
+            <depend id="52" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="52" name="Create demo/final deliverables" color="#ff00ff" meeting="false" start="2022-04-14" duration="7" complete="0" thirdDate="2022-03-20" thirdDate-constraint="0" expand="true">
+            <depend id="139" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="133" name="In Class Presentations day 1" color="#ff0000" meeting="true" start="2022-04-21" duration="0" complete="0" thirdDate="2022-03-23" thirdDate-constraint="0" expand="true">
+            <depend id="139" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="139" name="Final touches/updates" color="#8cb6ce" meeting="false" start="2022-04-21" duration="7" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true">
+            <depend id="135" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="135" name="In Class Presentations day 2" color="#ff0000" meeting="true" start="2022-04-28" duration="0" complete="0" thirdDate="2022-03-23" thirdDate-constraint="0" expand="true"/>
+        <task id="55" name="Essays" color="#0000ff" meeting="false" start="2022-03-03" duration="60" complete="0" thirdDate="2022-03-20" thirdDate-constraint="0" expand="true">
+            <task id="57" name="Essay 1" color="#0000ff" meeting="false" start="2022-03-03" duration="7" complete="0" thirdDate="2022-03-20" thirdDate-constraint="0" expand="true">
+                <depend id="59" type="2" difference="0" hardness="Strong"/>
+                <depend id="65" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="65" name="Essay 1 Reviews" color="#66ccff" meeting="false" start="2022-03-10" duration="4" complete="0" thirdDate="2022-02-25" thirdDate-constraint="0" expand="true"/>
+            <task id="59" name="Essay 2" color="#0000ff" meeting="false" start="2022-03-10" duration="7" complete="0" thirdDate="2022-02-25" thirdDate-constraint="0" expand="true">
+                <depend id="61" type="2" difference="0" hardness="Strong"/>
+                <depend id="68" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="68" name="Essay 2 Reviews" color="#66ccff" meeting="false" start="2022-03-17" duration="4" complete="0" thirdDate="2022-02-25" thirdDate-constraint="0" expand="true"/>
+            <task id="61" name="Essay 3" color="#0000ff" meeting="false" start="2022-03-17" duration="7" complete="0" thirdDate="2022-02-25" thirdDate-constraint="0" expand="true">
+                <depend id="63" type="2" difference="0" hardness="Strong"/>
+                <depend id="71" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="71" name="Essay 3 Reviews" color="#66ccff" meeting="false" start="2022-03-24" duration="4" complete="0" thirdDate="2022-02-25" thirdDate-constraint="0" expand="true"/>
+            <task id="63" name="Essay 4" color="#0000ff" meeting="false" start="2022-03-24" duration="7" complete="0" thirdDate="2022-02-25" thirdDate-constraint="0" expand="true">
+                <depend id="74" type="2" difference="0" hardness="Strong"/>
+                <depend id="76" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="74" name="Essay 4 Reviews" color="#66ccff" meeting="false" start="2022-03-31" duration="4" complete="0" thirdDate="2022-03-08" thirdDate-constraint="0" expand="true"/>
+            <task id="76" name="Essay 5" color="#0000ff" meeting="false" start="2022-03-31" duration="7" complete="0" thirdDate="2022-03-08" thirdDate-constraint="0" expand="true">
+                <depend id="78" type="2" difference="0" hardness="Strong"/>
+                <depend id="80" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="78" name="Essay 5 Reviews" color="#66ccff" meeting="false" start="2022-04-07" duration="4" complete="0" thirdDate="2022-03-08" thirdDate-constraint="0" expand="true"/>
+            <task id="80" name="Essay 6" color="#0000ff" meeting="false" start="2022-04-07" duration="7" complete="0" thirdDate="2022-03-08" thirdDate-constraint="0" expand="true">
+                <depend id="82" type="2" difference="0" hardness="Strong"/>
+                <depend id="84" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="82" name="Essay 6 Reviews" color="#66ccff" meeting="false" start="2022-04-14" duration="4" complete="0" thirdDate="2022-03-27" thirdDate-constraint="0" expand="true"/>
+            <task id="84" name="Essay 7" color="#0000ff" meeting="false" start="2022-04-14" duration="7" complete="0" thirdDate="2022-03-27" thirdDate-constraint="0" expand="true">
+                <depend id="86" type="2" difference="0" hardness="Strong"/>
+                <depend id="88" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="86" name="Essay 7 Reviews" color="#66ccff" meeting="false" start="2022-04-21" duration="4" complete="0" thirdDate="2022-03-27" thirdDate-constraint="0" expand="true"/>
+            <task id="88" name="Essay 8" color="#0000ff" meeting="false" start="2022-04-21" duration="7" complete="0" thirdDate="2022-03-27" thirdDate-constraint="0" expand="true">
+                <depend id="90" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="90" name="Essay 8 Reviews" color="#66ccff" meeting="false" start="2022-04-28" duration="4" complete="0" thirdDate="2022-03-27" thirdDate-constraint="0" expand="true"/>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
