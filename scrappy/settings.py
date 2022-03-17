@@ -54,7 +54,7 @@ ROOT_URLCONF = 'scrappy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['scrappy_webpage/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
