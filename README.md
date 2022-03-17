@@ -24,7 +24,7 @@ Backend: Python/Django, Twitter API
 
 Database: Docker
 
-## Deployment informtation
+## Deployment information
 
-[ADD HERE]
+We are using Heroku to deploy our website. We are using the "Github" option instead of the "git" option so the app will be deployed automatically instead of having to run any code.
 
