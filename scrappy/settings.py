@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-fa@d4r61-d@yz4dn8y7&%6#84)2lod0*a%oxd=br-7sboaalg^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.herokuapp.com']
-
+ALLOWED_HOSTS = ['https://twitter-pulls.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://twitter-pulls.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
@@ -124,3 +124,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import django_on_heroku
 django_on_heroku.settings(locals())
+
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
