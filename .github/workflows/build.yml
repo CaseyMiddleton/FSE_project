@@ -1,0 +1,30 @@
+name: SrcaPy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo code
+        uses: actions/checkout@v2
+
+      - name: Set Up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install pip
+          run: |
+            python -m pip install --upgrade pip
+
+      - name: Run Pytest
+          run: |
+            pytest
+      
