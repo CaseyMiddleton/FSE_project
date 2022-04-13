@@ -9,9 +9,9 @@ def test_auth():
 def test_write_query():
     ''' Test that write query function returns a string '''
     query = write_query("hello") # query with one parameter
-    assert(type(query) is str)
-    query = write_query("hello","googbye","AND") # query with two parameters
-    assert(type(query) is str)
+    assert(query == "hello lang:en -is:retweet")
+    query = write_query("hello","goodbye","AND") # query with two parameters
+    assert(query == "hello goodbye lang:en -is:retweet")
 
 def test_connect_to_endpoint():
     ''' Test if the appropriate response code (200) is received from the endpoint '''
