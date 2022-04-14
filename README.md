@@ -22,6 +22,8 @@ Frontend: HTML/CSS
 
 Backend: Python/Django, Twitter API
 
+Testing: Pytest
+
 Database: Docker
 
 ## Deployment information
