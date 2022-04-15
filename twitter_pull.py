@@ -59,11 +59,11 @@ def write_query(input1, input2 = None, connector = None):
         build_query = input1 + lang_key + rt
     return build_query
 
-def retrieve_json(next_token = None):
+def retrieve_json(input1,input2=None,connector=None,next_token = None):
     #Inputs for the request
     bearer_token = auth()
     headers = create_headers(bearer_token)
-    keyword = write_query("covid")
+    keyword = write_query(input1,input2,connector)
     max_results = 100
     url = create_url(keyword, max_results)
     json_response = connect_to_endpoint(url[0], headers, url[1], next_token)
@@ -111,13 +111,8 @@ def top_five_tweets(all_tweets):
             displayed_tweets[idx] = data[4]
     return(displayed_tweets,max_interactions)
 
-
-def main():
-    tweets = retrieve_json()
-    all_tweets = tweet_looper(tweets)
-    disp,cnt = top_five_tweets(all_tweets)
-    print(disp)
-    print(cnt)
-
-if __name__ == '__main__':
-    main()
+def website_tweet_pull(input1,input2=None,connector=None):
+    json_response = retrieve_json(input1,input2,connector)
+    all_tweets = tweet_looper(json_response)
+    tweet,interactions = top_five_tweets(all_tweets)
+    return tweet,interactions
