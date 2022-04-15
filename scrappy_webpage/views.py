@@ -18,7 +18,7 @@ def get_name(request):
             cleaned_data = form.cleaned_data
             user_request = Searches(first_query = cleaned_data['first_query'], connector = cleaned_data['connector'], second_query = cleaned_data['second_query'])
 
-            user_request.save()
+            # user_request.save()
 
             #call twitter api
 
