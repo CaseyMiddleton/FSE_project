@@ -1,7 +1,5 @@
 # For sending GET requests from the API
 import requests
-# For saving access tokens and for file management when creating and adding to the dataset
-# import os
 # For dealing with json responses we receive from the API
 import json
 # For saving the response data in CSV format
@@ -11,13 +9,11 @@ import datetime
 import unicodedata
 #To add wait time between requests
 import time
-# Test out Tweepy functionality
-# import tweepy
-
-token = 'AAAAAAAAAAAAAAAAAAAAAEg4aQEAAAAASy8asmZtrAf3y3aHNLQU2nK3bgY%3D1qoAMuRn0NSsV51MrBJMbSQTIbQiKQQUo6mA1KIXoOpPXI5VsR'
+# For accessing API Key in Heroku environmental variables
+from boto.s3.connection import S3Connection
 
 def auth():
-    return token
+    return S3Connection(os.environ['TOKEN'])
 
 def create_headers(bearer_token):
     headers = {"Authorization": "Bearer {}".format(bearer_token)}
