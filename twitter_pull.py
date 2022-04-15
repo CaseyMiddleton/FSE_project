@@ -48,7 +48,7 @@ def connect_to_endpoint(url, headers, params, next_token = None):
 def write_query(input1, input2 = None, connector = None):
     lang_key = " lang:en"               # only english results
     rt = " -is:retweet"                 # do not include retweets
-    if connector != None:
+    if (connector != None & connector != ""):
         if connector == "AND":
             build_query = input1 + " " + input2 + lang_key + rt
         elif connector == "OR":
