@@ -16,7 +16,7 @@ def get_name(request):
             # process the data in form.cleaned_data as required
             print(form.cleaned_data)
             cleaned_data = form.cleaned_data
-            user_request = Searches(first_query = cleaned_data['first_query'], connector = cleaned_data['connector'], second_query = cleaned_data['second_query'], )
+            user_request = Searches(first_query = cleaned_data['first_query'])#, connector = cleaned_data['connector'], second_query = cleaned_data['second_query'])
 
             user_request.save()
 
@@ -24,7 +24,7 @@ def get_name(request):
 
 
             # redirect to a new URL:
-            return render(request, 'scrappy_webpage/results.html', {'user_request': user_request})
+            return render(request, 'scrappy_webpage/results.html', {'user_request': user_request,})
             #return HttpResponseRedirect('/results/')
 
     # if a GET (or any other method) we'll create a blank form
