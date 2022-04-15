@@ -16,10 +16,8 @@ def get_name(request):
         if form.is_valid():
             # process the data in form.cleaned_data as required
             cleaned_data = form.cleaned_data
-            input
             #call twitter api
-            # tweets, interactions = twitter_pull.website_tweet_pull(cleaned_data['first_query'], cleaned_data['second_query'].upper(), cleaned_data['connector'])
-            tweets = [3,4]
+            tweets, interactions = website_tweet_pull(cleaned_data['first_query'], cleaned_data['second_query'].upper(), cleaned_data['connector'])
             #save querry to database
             user_request = Searches(first_query = cleaned_data['first_query'], connector = cleaned_data['connector'], second_query = cleaned_data['second_query'])
             # user_request.save()
