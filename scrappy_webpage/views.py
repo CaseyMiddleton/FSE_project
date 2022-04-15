@@ -43,18 +43,18 @@ def get_results(request):
 
 
 # For sending GET requests from the API
-import requests
+# import requests
 # For saving access tokens and for file management when creating and adding to the dataset
 # import os
 # For dealing with json responses we receive from the API
-# import json
+import json
 # For saving the response data in CSV format
-# import csv
+import csv
 # For parsing the dates received from twitter in readable formats
-# import datetime
-# import unicodedata
+import datetime
+import unicodedata
 #To add wait time between requests
-# import time
+import time
 # Test out Tweepy functionality
 # import tweepy
 
