@@ -15,14 +15,16 @@ def get_name(request):
         if form.is_valid():
             # process the data in form.cleaned_data as required
             print(form.cleaned_data)
-            ins = Searches(first_query = form.cleaned_data['first_query'])
-            # ins.save()
+            cleaned_data = form.cleaned_data
+            user_request = Searches(first_query = cleaned_data['first_query'], second_query = cleaned_data['first_query'] )
+
+            user_request.save()
 
             #call twitter api
 
 
             # redirect to a new URL:
-            return render(request, 'scrappy_webpage/results.html', {'ins': ins,})
+            return render(request, 'scrappy_webpage/results.html', {'user_request': user_request})
             #return HttpResponseRedirect('/results/')
 
     # if a GET (or any other method) we'll create a blank form
