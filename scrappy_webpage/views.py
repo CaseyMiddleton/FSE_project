@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 from .forms import NameForm
 from scrappy_webpage.models import Searches
-import scrappy_webpage.twitter_pull as twitter_pull
+# import scrappy_webpage.twitter_pull as twitter_pull
 
 def get_name(request):
     # if this is a POST request we need to process the form data
@@ -18,8 +18,8 @@ def get_name(request):
             cleaned_data = form.cleaned_data
             input
             #call twitter api
-            tweets, interactions = twitter_pull.website_tweet_pull(cleaned_data['first_query'], cleaned_data['second_query'].upper(), cleaned_data['connector'])
-
+            # tweets, interactions = twitter_pull.website_tweet_pull(cleaned_data['first_query'], cleaned_data['second_query'].upper(), cleaned_data['connector'])
+            tweets = [3,4]
             #save querry to database
             user_request = Searches(first_query = cleaned_data['first_query'], connector = cleaned_data['connector'], second_query = cleaned_data['second_query'])
             # user_request.save()
