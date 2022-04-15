@@ -43,7 +43,7 @@ def get_results(request):
 
 
 # For sending GET requests from the API
-# import requests
+import requests
 # For saving access tokens and for file management when creating and adding to the dataset
 # import os
 # For dealing with json responses we receive from the API
