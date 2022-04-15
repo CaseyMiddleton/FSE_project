@@ -16,7 +16,7 @@ def get_name(request):
             # process the data in form.cleaned_data as required
             print(form.cleaned_data)
             ins = Searches(first_query = form.cleaned_data['first_query'])
-            ins.save()
+            # ins.save()
 
             #call twitter api
 
