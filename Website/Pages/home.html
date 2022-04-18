@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" href="../Resources/css/style.css">
+</head>
 <body>
 
-    <h1>ScraPy</h1>
-    <p>Enter your Twitter search queries.</p>
-    <form>
-        <label for="fname">First query:</label><br>
-        <input type="text" id="q1" name="q1"><br>
-        <label for="lname">Second query:</label><br>
-        <input type="text" id="q2" name="q2">
+    <div class="center" style="width: 30%;">
+        <h1>ScraPy</h1>
+        <p>Enter your Twitter search queries.</p>
+        <form>
+            <label for="fname">First query:</label><br>
+            <input type="text" id="q1" name="q1"><br><br>
+            <label for="lname">Second query:</label><br>
+            <input type="text" id="q2" name="q2">
+            <br><br>
+            <label for="bool">Choose a car:</label>
+            <select name="bool" id="bool">
+                <option value="AND">AND</option>
+                <option value="OR">OR</option>
+            </select>
+            <br><br>
+            <input type="submit" id="submit" name="submit">
+        </form>
         <br>
-        <label for="bool">Choose a car:</label>
-        <select name="bool" id="bool">
-            <option value="AND">AND</option>
-            <option value="OR">OR</option>
-        </select>
-        <br>
-        <input type="submit" id="submit" name="submit">
-    </form>
-    <form>
-        <input name="download" type="submit" value="Download"/>
-    </form>
-    <p id="indicator"></p>
-    <div id="image"></div>
+        <form>
+            <input name="download" type="submit" value="Download"/>
+        </form>
+    </div>
+    
 
 </body>
 </html>
