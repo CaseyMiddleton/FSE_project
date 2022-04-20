@@ -1,6 +1,44 @@
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form }}
-    
-    <input type="submit" value="Submit">
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: #1D9BF0;
+    font-family: Monaco;
+  }
+h1 {
+    font-weight: 900;
+  }
+div {
+    background-color: #AAB8C2;
+    border: 10px outset #657786;
+    text-align: center;
+    align-items: center;
+  }
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+
+    <div class="center" style="width: 30;">
+        <h1>ScraPy</h1>
+        <p>Enter your Twitter search terms.</p>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="fname">First search term:</label><br>
+            {{ form.first_query }}<br><br>
+            {{ form.connector }}<br><br>
+            <label for="lname">Second search term:</label><br>
+            {{ form.second_query }}<br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+</body>
+</html>
