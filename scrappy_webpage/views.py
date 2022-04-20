@@ -25,7 +25,8 @@ def get_name(request):
 
 
             # redirect to a new URL:
-            return render(request, 'scrappy_webpage/results.html', {'user_request': user_request,'tweets':tweets})
+            #return render(request, 'scrappy_webpage/results.html', {'user_request': user_request,'tweets':tweets})
+            return render(request, 'scrappy_webpage/results.html', {'user_request': user_request,'tweet1':tweets[0],'tweet2':tweets[1],'tweet3':tweets[2],'tweet4':tweets[3],'tweet5':tweets[4]})
             #return HttpResponseRedirect('/results/')
 
     # if a GET (or any other method) we'll create a blank form
