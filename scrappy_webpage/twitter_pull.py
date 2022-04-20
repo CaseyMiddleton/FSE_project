@@ -50,7 +50,8 @@ def write_query(input1, input2 = None, connector = None):
         elif connector == "OR":
             build_query = "(" + input1 + " " + connector + " " + input2  + ")" + lang_key + rt
         else:
-            raise ValueError
+            # if user inputs first word and connector but no second word, default to first word 
+            build_query = input1 + lang_key + rt
     else:
         build_query = input1 + lang_key + rt
     return build_query
