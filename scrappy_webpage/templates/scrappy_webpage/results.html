@@ -1,18 +1,44 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+body {
+    background-color: #1D9BF0;
+    font-family: Monaco;
+  }
+h1 {
+    font-weight: 900;
+  }
+div {
+    background-color: #AAB8C2;
+    border: 10px outset #657786;
+    text-align: center;
+    align-items: center;
+  }
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+  }
+</style>
+</head>
 <body>
-<h3>Here are five popular tweets for {{user_request.first_query}} {{user_request.connector}} {{user_request.second_query}}:</h3>
 
-<p>{{tweet1}}</p>
+    <div class="center">
+        <h1>ScraPy</h1>
+        <h3>Here are five popular tweets for {{user_request.first_query}} {{user_request.connector}} {{user_request.second_query}}:</h3>
+        <br>
+        <p>{{tweet1}}</p>
+       
+        <p>{{tweet2}}</p>
+        
+        <p>{{tweet3}}</p>
+        
+        <p>{{tweet4}}</p>
 
-<p>{{tweet2}}</p>
-
-<p>{{tweet3}}</p>
-
-<p>{{tweet4}}</p>
-
-<p>{{tweet5}}</p>
-
+        <p>{{tweet5}}</p>
+    </div>
 </body>
 </html>
 
