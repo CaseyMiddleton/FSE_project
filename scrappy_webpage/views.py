@@ -20,7 +20,7 @@ def get_name(request):
             tweets, interactions = twitter_pull.website_tweet_pull(cleaned_data['first_query'], cleaned_data['second_query'].upper(), cleaned_data['connector'])
             #save querry to database
             user_request = Searches(first_query = cleaned_data['first_query'], connector = cleaned_data['connector'], second_query = cleaned_data['second_query'])
-            # user_request.save()
+            user_request.save()
 
 
 
