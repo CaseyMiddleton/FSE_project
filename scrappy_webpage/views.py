@@ -23,9 +23,9 @@ def get_name(request):
             user_request.save()
 
             #call twitter api for json response
-            request = Searches.objects.filter(id == 6)[0] # raw_data=''
+            request = Searches.objects.filter(id=6)[0] # raw_data=''
             json_response = twitter_pull.retrieve_json(request['first_query'], request['second_query'].upper(), request['connector'])
-            request.raw_data = "complete" # tag as completing raw data pull
+            #request.raw_data = "complete" # tag as completing raw data pull
             request.save()
 
             # clean twitter data
