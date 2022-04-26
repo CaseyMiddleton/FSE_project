@@ -25,7 +25,8 @@ def get_name(request):
             #call twitter api for json response
             recent_db_entry = Searches.objects.latest("id") # call most recent entry
             json_response = twitter_pull.retrieve_json(recent_db_entry.first_query, recent_db_entry.second_query.upper(), recent_db_entry.connector)
-            recent_db_entry.raw_data = "complete" # tag as completing raw data pull
+            json_as_list = twitter_process.tweet_looper(json_response)
+            recent_db_entry.raw_data = json_as_list # tag as completing raw data pull
             recent_db_entry.save()
 
             # clean twitter data
