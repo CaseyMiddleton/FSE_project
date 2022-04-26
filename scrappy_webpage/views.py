@@ -17,12 +17,19 @@ def get_name(request):
         if form.is_valid():
             # process the data in form.cleaned_data as required
             cleaned_data = form.cleaned_data
-            #call twitter api
-            json_response = twitter_pull.retrieve_json(cleaned_data['first_query'], cleaned_data['second_query'].upper(), cleaned_data['connector'])
-            tweets, interactions = twitter_process.website_tweet_process(json_response)
+
             #save querry to database
-            user_request = Searches(first_query = cleaned_data['first_query'], connector = cleaned_data['connector'], second_query = cleaned_data['second_query'])
+            user_request = Searches(first_query = cleaned_data['first_query'], connector = cleaned_data['connector'], second_query = cleaned_data['second_query'])#, raw_data = '', cleaned_data = '')
             user_request.save()
+
+            #call twitter api for json response
+            request = Searches.objects.filter(id == 6)[1] # raw_data=''
+            json_response = twitter_pull.retrieve_json(request['first_query'], request['second_query'].upper(), request['connector'])
+            request.raw_data = "complete" # tag as completing raw data pull
+            request.save()
+
+            # clean twitter data
+            tweets, interactions = twitter_process.website_tweet_process(json_response)
 
             # redirect to a new URL:
             #return render(request, 'scrappy_webpage/results.html', {'user_request': user_request,'tweets':tweets})
