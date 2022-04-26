@@ -59,6 +59,6 @@ def top_five_tweets(all_tweets):
     return(displayed_tweets,max_interactions)
 
 def website_tweet_process(json_response):
-    all_tweets = tweet_looper(json_response)
+    all_tweets = json_response #tweet_looper(json_response)
     tweet,interactions = top_five_tweets(all_tweets)
     return tweet,interactions

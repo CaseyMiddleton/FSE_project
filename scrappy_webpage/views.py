@@ -30,7 +30,9 @@ def get_name(request):
             recent_db_entry.save()
 
             # clean twitter data
-            tweets, interactions = twitter_process.website_tweet_process(json_response)
+            tweets, interactions = twitter_process.website_tweet_process(recent_db_entry.raw_data)
+            recent_db_entry.cleaned_data = tweets
+            recent_db_entry.save()
 
             # redirect to a new URL:
             #return render(request, 'scrappy_webpage/results.html', {'user_request': user_request,'tweets':tweets})
