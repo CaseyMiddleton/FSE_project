@@ -6,5 +6,5 @@ class Searches(models.Model):
     first_query = models.CharField(max_length=200)
     connector = models.CharField(choices = CONNECTOR_CHOICES, max_length = 100, default="X")
     second_query = models.CharField(max_length=200)
-    #raw_data = models.CharField(max_length=200)
-    #cleaned_data = models.CharField(max_length=200)
+    raw_data = models.CharField(max_length=200, default="X")
+    cleaned_data = models.CharField(max_length=200, default="X")
