@@ -46,5 +46,27 @@ def get_name(request):
     return render(request, 'scrappy_webpage/index.html', {'form': form,})
 
 
+def integration_test(request):
+    # if this is a POST request we need to process the form data
+    # if request.method == 'POST':
+
+    db_entry = 'Database Integration Success'
+
+    user_request = Searches(first_query = db_entry, connector = db_entry, second_query = db_entry, raw_data = db_entry, cleaned_data = db_entry)
+    user_request.save()
+
+    recent_db_entry = Searches.objects.latest("id") # call most recent entry
+
+
+    if (recent_db_entry.first_query == db_entry) &\
+       (recent_db_entry.connector == db_entry) &\
+       (recent_db_entry.second_query == db_entry) &\
+       (recent_db_entry.raw_data == db_entry) &\
+       (recent_db_entry.cleaned_data == db_entry):
+        return render(request, 'scrappy_webpage/integration_test.html', {'int_test_results': recent_db_entry.first_query})
+
+    return render(request, 'scrappy_webpage/integration_test.html', {'int_test_results': 'Integration Test Failed'})
+
+
 def get_results(request):
     return render(request, "scrappy_webpage/results.html")

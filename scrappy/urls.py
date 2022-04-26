@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+import scrappy_webpage.views as views
 
 urlpatterns = [
     path('scrappy_webpage/', include('scrappy_webpage.urls')),
     path('admin/', admin.site.urls),
+    path('integration_test/', views.integration_test)
 ]
