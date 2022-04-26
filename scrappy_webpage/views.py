@@ -23,10 +23,10 @@ def get_name(request):
             user_request.save()
 
             #call twitter api for json response
-            request = Searches.objects.filter(id == 6)[0] # raw_data=''
-            json_response = twitter_pull.retrieve_json(request['first_query'], request['second_query'].upper(), request['connector'])
-            request.raw_data = "complete" # tag as completing raw data pull
-            request.save()
+            recent_db_entry = Searches.objects.latest("id") # call most recent entry
+            json_response = twitter_pull.retrieve_json(recent_db_entry.first_query, recent_db_entry.second_query.upper(), recent_db_entry.connector)
+            #request.raw_data = "complete" # tag as completing raw data pull
+            #request.save()
 
             # clean twitter data
             tweets, interactions = twitter_process.website_tweet_process(json_response)
