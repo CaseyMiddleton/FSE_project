@@ -1,4 +1,5 @@
-from scrappy_webpage.twitter_pull import *
+# from scrappy_webpage.twitter_pull import *
+from twitter_pull import *
 import json
 
 def test_auth():
