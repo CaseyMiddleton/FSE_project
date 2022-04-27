@@ -1,5 +1,7 @@
 # For sending GET requests from the API
 import requests
+# For saving access tokens and for file management when creating and adding to the dataset
+import os
 # For dealing with json responses we receive from the API
 import json
 # For saving the response data in CSV format
