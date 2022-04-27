@@ -5,8 +5,8 @@ from django.shortcuts import render
 
 from .forms import NameForm
 from scrappy_webpage.models import Searches
-import scrappy_webpage.twitter_pull as twitter_pull
-import scrappy_webpage.twitter_process as twitter_process
+import twitter_pull as twitter_pull
+import twitter_process as twitter_process
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
