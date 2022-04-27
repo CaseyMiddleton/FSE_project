@@ -8,6 +8,14 @@ from scrappy_webpage.models import Searches
 import scrappy_webpage.twitter_pull as twitter_pull
 import scrappy_webpage.twitter_process as twitter_process
 
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+
+@api_view(['GET'])
+def get_health_check(request):
+    health_check = {'health':'This application is healthy'}
+    return Response(health_check)
+
 def get_name(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':

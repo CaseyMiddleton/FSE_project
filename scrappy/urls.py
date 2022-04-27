@@ -20,5 +20,6 @@ import scrappy_webpage.views as views
 urlpatterns = [
     path('scrappy_webpage/', include('scrappy_webpage.urls')),
     path('admin/', admin.site.urls),
-    path('integration_test/', views.integration_test)
+    path('integration_test/', views.integration_test),
+    path('health/', views.get_health_check, name='health')
 ]
