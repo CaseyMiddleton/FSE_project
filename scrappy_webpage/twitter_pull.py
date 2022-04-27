@@ -15,7 +15,7 @@ import time
 from boto.s3.connection import S3Connection
 
 def auth():
-    return S3Connection(os.environ['TOKEN'])
+    return S3Connection(os.environ['S3_TOKEN'])
 
 def create_headers(bearer_token):
     headers = {"Authorization": "Bearer {}".format(bearer_token)}
