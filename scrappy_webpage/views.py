@@ -5,8 +5,8 @@ from django.shortcuts import render
 
 from .forms import NameForm
 from scrappy_webpage.models import Searches
-import twitter_pull
-import twitter_process
+import scrappy_webpage.twitter_pull as twitter_pull
+import scrappy_webpage.twitter_process as twitter_process
 
 def get_name(request):
     # if this is a POST request we need to process the form data
