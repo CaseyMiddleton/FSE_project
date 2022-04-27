@@ -9,8 +9,6 @@ import datetime
 import unicodedata
 #To add wait time between requests
 import time
-# For accessing API Key in Heroku environmental variables
-from boto.s3.connection import S3Connection
 
 def tweet_looper(tweets):
     all_tweets = []
