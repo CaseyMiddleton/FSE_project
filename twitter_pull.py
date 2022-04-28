@@ -92,7 +92,7 @@ def tweet_looper(tweets):
 
 def retrieve_tweets(input1,input2=None,connector=None,next_token = None):
     # Handle cases of improper inputs:
-    if (connector == "" && input2 != "") | (connector != "" && input2 == ""):
+    if (connector == "" and input2 != "") or (connector != "" and input2 == ""):
         return [[1, 1, 1, 1, "Please enter a valid search with either one search term, or two search terms with a connector."]]
     #Inputs for the request
     bearer_token = auth()
