@@ -60,7 +60,40 @@ def write_query(input1, input2 = None, connector = None):
         build_query = input1 + lang_key + rt
     return build_query
 
-def retrieve_json(input1,input2=None,connector=None,next_token = None):
+def tweet_looper(tweets):
+    all_tweets = []
+    # loop through tweets and extract necessary information
+    try:
+        for tweet in tweets['data']:
+            # 1. Author ID
+            author_id = tweet['author_id']
+            # 2. Time created
+            created_at = tweet['created_at']
+            # 3. Language
+            lang = tweet['lang']
+            # 4. Tweet metrics
+            retweet_count = tweet['public_metrics']['retweet_count']
+            reply_count = tweet['public_metrics']['reply_count']
+            like_count = tweet['public_metrics']['like_count']
+            quote_count = tweet['public_metrics']['quote_count']
+            tot_count = retweet_count + reply_count + like_count + quote_count
+            # 5. source
+            source = tweet['source']
+            # 6. Tweet text
+            text = tweet['text']
+
+            tweet_data = [author_id, created_at, lang, tot_count, text]
+            all_tweets.append(tweet_data)
+
+        return all_tweets
+    except:
+        # if no tweets exist for keywords, return message
+        return [[1, 1, 1, 1, "Sorry, no tweets exist with your search terms! Please try again."]]
+
+def retrieve_tweets(input1,input2=None,connector=None,next_token = None):
+    # Handle cases of improper inputs:
+    if (connector == "" && input2 != "") | (connector != "" && input2 == ""):
+        return [[1, 1, 1, 1, "Please enter a valid search with either one search term, or two search terms with a connector."]]
     #Inputs for the request
     bearer_token = auth()
     headers = create_headers(bearer_token)
@@ -68,4 +101,5 @@ def retrieve_json(input1,input2=None,connector=None,next_token = None):
     max_results = 100
     url = create_url(keyword, max_results)
     json_response = connect_to_endpoint(url[0], headers, url[1], next_token)
-    return json_response
+    tweets = tweet_looper(json_response)
+    return tweets
