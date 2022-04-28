@@ -26,6 +26,8 @@ div {
 <body>
 
     <div class="center">
+        <a href="{% url 'main' %}"> Back to Search </a>
+        <br>
         <h1>ScraPy</h1>
         <h3>Here are five popular tweets for {{user_request.first_query}} {{user_request.connector}} {{user_request.second_query}}:</h3>
         <br>

@@ -1,1 +1,1 @@
-CONNECTOR_CHOICES = [('X',''),('AND','and'),('OR','or')]
+CONNECTOR_CHOICES = [('',''),('AND','and'),('OR','or')]
