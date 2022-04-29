@@ -14,7 +14,7 @@ Nick LaBerge, Casey Middleton, Katie Spoon, and Ponder Stine
 
 ## Final Project Rubric with commentary
 
-[Here's a link to our final project rubric](https://docs.google.com/document/d/1nUqY5x904rdo2uXQwf1Y0li0O16a0c5zipjCGjmGzfg/edit), with commentery, which should help with grading our work! 
+[Here's a link to our final project rubric](https://docs.google.com/document/d/1JYl70TQGF7lGOcjv9dyN3-9Rf1BOhnnfFqTE50QR3iE), with commentery, which should help with grading our work! 
 
 
 ## Tools/Frameworks used:
